@@ -1,11 +1,21 @@
-import "./App.css";
+import AllArticles from "./components/all-articles";
+import Header from "./components/header";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Does this work?</h1>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <AllArticles />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
