@@ -29,11 +29,10 @@ const AllArticles = () => {
                 {articles.map((article) => {
                     let strDate = `${article.created_at}`;
                     let date = strDate.substring(0, 10);
-                    console.log(date)
                     return <li className="card" key={article.title}>
-                        <h3 className="card_title">{article.title}</h3>
+                        <h2 className="card_title">{article.title}</h2>
                         <h4 className="card_topic">{article.topic}</h4>
-                        <p className="card_date">{article.created_at}</p>
+                        <p className="card_date">{date}</p>
                         <p className="card_votes">Votes: {article.votes}</p>
                     </li>;
                 })}
