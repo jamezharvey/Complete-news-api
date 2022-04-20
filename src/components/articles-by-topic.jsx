@@ -1,33 +1,29 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
+import { useParams } from "react-router-dom";
 import '../styling/article.styling.css'
 
-const AllArticles = () => {
+const ArticlesByTopic = () => {
     const [articles, setArticles] = useState([])
-    // const [sortType, setSortType] = useState('created_at');
-
+    const {topic} = useParams();
+    
     useEffect(() => {
         getArticles().then((articlesFromApi) => {
-            setArticles(articlesFromApi)
-        })
+        setArticles(articlesFromApi)
+    })}, []); 
 
-        // const sortArray = type => {
-        //     const types = {
-        //         created_at: 'created_at',
-        //         votes: 'votes',
-        //     };
-        //     const sortProperty = types[type];
-        //     const sorted = [...articles].sort((a, b) => b[sortProperty] - a[sortProperty]);
-        //     setArticles(sorted);
-        // };
-        // sortArray(sortType);
-    }, []); 
-
+    let displayedArticles = []
+    articles.map((article) => {
+        if(article.topic === topic){
+            displayedArticles.push(article)
+        }
+    })
 
     return (
         <>
+            <h2 className="topic_header">{topic}</h2>
             <ul className="cards">
-                {articles.map((article) => {
+                {displayedArticles.map((article) => {
                     let strDate = `${article.created_at}`;
                     let date = strDate.substring(0, 10);
                     return <li className="card" key={article.title}>
@@ -42,4 +38,4 @@ const AllArticles = () => {
     )
 }
 
-export default AllArticles
+export default ArticlesByTopic
