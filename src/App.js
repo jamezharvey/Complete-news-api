@@ -11,7 +11,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<AllArticles />} />
-        <Route path="/topics/:topic" element={<ArticlesByTopic />} />
+        <Route path="/articles/:topic" element={<ArticlesByTopic />} />
       </Routes>
     </div>
   );
