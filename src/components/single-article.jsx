@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticle } from "../utils/api";
 import { useParams } from "react-router-dom";
+import VoteButton from "./votes";
 import '../styling/article.styling.css'
 
 const SingleArticle = () => {
@@ -15,8 +16,12 @@ const SingleArticle = () => {
     let strDate = `${article.created_at}`;
     let date = strDate.substring(0, 10);
 
+    if(!article) {
+        return null
+    }
+
     return(
-        <div>
+        <>
             <body className="article_box">
                 <h2 className="article_title">{article.title}</h2>
                     <div className="article_box2">
@@ -25,11 +30,11 @@ const SingleArticle = () => {
                     </div>
                 <p className="article_body">{article.body}</p>
                     <div className="article_interactions">
-                        <p className="article_votes">Votes: {article.votes}</p>
+                        <VoteButton articleid={article.article_id} votes={article.votes} />
                         <p className="article_comments">Comments: {article.comment_count}</p>
                     </div>
             </body>
-        </div>
+        </>
     )
 }
 

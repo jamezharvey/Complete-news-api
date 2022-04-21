@@ -21,3 +21,11 @@ export const getArticle = (article_id) => {
     return data.article;
   });
 };
+
+export const patchVotes = (articleid, dataToPatch) => {
+  return newsApi
+    .patch(`/articles/${articleid}`, dataToPatch)
+    .then(({ data }) => {
+      return data.article;
+    });
+};

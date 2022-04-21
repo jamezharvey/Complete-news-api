@@ -119,6 +119,26 @@
   text-align: right;
 }
 
+.votes {
+  display: grid;
+  width: 70px;
+  grid-template-columns: 45px 25px;
+}
+
+.vote_button {
+  margin-right: 3px;
+  border-style: none;
+  background-color: orange;
+}
+
+.vote_count {
+  border-style: solid rgb(41, 41, 41);
+  border-width: 0.5px;
+  border-radius: 3px;
+  text-align: center;
+  background: #d8d9da;
+}
+
 a:link {
   text-decoration: none;
 }
