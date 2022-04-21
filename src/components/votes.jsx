@@ -7,11 +7,11 @@ const VoteButton = ({articleid, votes}) => {
     // const[errorMsg, setErrorMsg] = useState('');
     const[isVoted, setIsVoted] = useState(false)
 
-    const handleUpvote = () => {
-    setVoteCount(currVoteCount => currVoteCount + 1);
+    const handleVote = () => {
     const increment = isVoted === true ? -1 : 1;
-    patchVotes(articleid, {inc_votes: increment})
+    setVoteCount(currVoteCount => currVoteCount + increment);
     setIsVoted(!isVoted);
+    patchVotes(articleid, {inc_votes: increment})
     }
 
     if(votes === undefined || votes === null || votes === NaN || votes === false){
@@ -20,7 +20,7 @@ const VoteButton = ({articleid, votes}) => {
 
     return (
         <div className="votes">
-        <button className="vote_button" onClick={handleUpvote}>Vote</button>
+        <button className="vote_button" onClick={handleVote}>Vote</button>
         <p className="vote_count">{voteCount}</p>
         </div>
     )
