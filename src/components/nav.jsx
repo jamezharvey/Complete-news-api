@@ -15,6 +15,9 @@ const Nav = () => {
     return (
         <>
         <ul className="nav_bar">
+            <li className="nav_topic">
+                <Link to="/"><h3 className="topic_title">home</h3></Link>
+                </li>
             {topics.map((topic) => {
                 return (
                     <li className="nav_topic">
