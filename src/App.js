@@ -1,8 +1,9 @@
+import { Route, Routes } from "react-router-dom";
 import AllArticles from "./components/all-articles";
 import ArticlesByTopic from "./components/articles-by-topic";
+import SingleArticle from "./components/single-article";
 import Header from "./components/header";
 import Nav from "./components/nav";
-import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<AllArticles />} />
-        <Route path="/articles/:topic" element={<ArticlesByTopic />} />
+        <Route path="/topics/:topic" element={<ArticlesByTopic />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
       </Routes>
     </div>
   );
