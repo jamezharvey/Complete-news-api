@@ -89,14 +89,14 @@
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+    padding: 0px;
     padding-bottom: 0px;
 }
 
 .article_box2 {
   display: grid;
   grid-template-columns: 350px 350px;
-  padding: 5px 10px 15px 10px;
+  padding: 5px 15px 15px 10px;
 }
 .article_author {
   text-align: left;
@@ -104,6 +104,7 @@
 
 .article_date {
   text-align: right;
+  margin-right: 10px;
 }
 
 .article_interactions {
@@ -121,8 +122,8 @@
 
 .votes {
   display: grid;
-  width: 70px;
-  grid-template-columns: 45px 25px;
+  width: 80px;
+  grid-template-columns: 55px 25px;
 }
 
 .vote_button {

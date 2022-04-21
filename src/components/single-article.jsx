@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticle } from "../utils/api";
 import { useParams } from "react-router-dom";
+import Comments from "./comments";
 import VoteButton from "./votes";
 import '../styling/article.styling.css'
 
@@ -34,6 +35,7 @@ const SingleArticle = () => {
                         <p className="article_comments">Comments: {article.comment_count}</p>
                     </div>
             </body>
+            <Comments articleid={article.article_id}/>
         </>
     )
 }

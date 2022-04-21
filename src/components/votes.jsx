@@ -20,7 +20,7 @@ const VoteButton = ({articleid, votes}) => {
 
     return (
         <div className="votes">
-        <button className="vote_button" onClick={handleVote}>Vote</button>
+        <button className="vote_button" onClick={handleVote}>{isVoted ? "Unvote" : "Vote"}</button>
         <p className="vote_count">{voteCount}</p>
         </div>
     )
