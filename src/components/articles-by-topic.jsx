@@ -30,7 +30,7 @@ const ArticlesByTopic = () => {
                 {displayedArticles.map((article) => {
                     let strDate = `${article.created_at}`;
                     let date = strDate.substring(0, 10);
-                    return <Link to={`/articles/${article.article_id}`}><li className="card" key={article.article_id}>
+                    return <Link key={article.article_id} to={`/articles/${article.article_id}`}><li className="card" >
                         <h2 className="card_title">{article.title}</h2>
                         <h4 className="card_topic">{article.topic}</h4>
                         <p className="card_date">{date}</p>
