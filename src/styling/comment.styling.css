@@ -96,4 +96,17 @@ transition: all 0.2s;
 
 .comment_votes {
     padding-left: 10px;
+    position:relative; left: 0px;
+}
+
+.comment_delete {
+    width: 50px;
+    float: right;
+    margin-left: 10px;
+}
+
+.comment_interaction {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
