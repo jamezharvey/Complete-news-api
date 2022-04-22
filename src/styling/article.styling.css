@@ -89,6 +89,7 @@
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 25px;
     padding: 0px;
     padding-bottom: 0px;
 }
@@ -109,7 +110,8 @@
 
 .article_interactions {
   display: grid;
-  grid-template-columns: 350px 350px; 
+  margin-top: 10px;
+  grid-template-columns: 350px 350px;
 }
 
 .article_votes{
