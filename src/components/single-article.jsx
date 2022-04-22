@@ -23,7 +23,7 @@ const SingleArticle = () => {
 
     return(
         <>
-            <body className="article_box">
+            <div className="article_box">
                 <h2 className="article_title">{article.title}</h2>
                     <div className="article_box2">
                         <h4 className="article_author">- {article.author}</h4> 
@@ -34,7 +34,7 @@ const SingleArticle = () => {
                         <VoteButton articleid={article.article_id} votes={article.votes} />
                         <p className="article_comments">Comments: {article.comment_count}</p>
                     </div>
-            </body>
+            </div>
             <Comments articleid={article.article_id}/>
         </>
     )

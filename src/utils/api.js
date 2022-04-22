@@ -36,6 +36,10 @@ export const postComments = (article_id, dataToPatch) => {
     });
 };
 
+export const deleteComment = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`);
+};
+
 export const patchVotes = (articleid, dataToPatch) => {
   return newsApi
     .patch(`/articles/${articleid}`, dataToPatch)

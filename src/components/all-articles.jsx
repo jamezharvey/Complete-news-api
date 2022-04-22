@@ -15,7 +15,6 @@ const AllArticles = () => {
             setArticles(articlesFromApi)
         })
     }, [searchTerm]); 
-    console.log(searchTerm)
 
 
     return (

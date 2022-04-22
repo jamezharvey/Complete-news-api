@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getComments, postComments } from "../utils/api";
+import DeleteButton from "./delete-comment";
 import "../styling/comment.styling.css"
 
 
@@ -76,7 +77,10 @@ const Comments = ({articleid}) => {
                             <a className="comment_author">{comment.author}</a>
                             <p className="comment_date">{date}</p>
                             <p className="comment_body">{comment.body}</p>
-                            <p className="comment_votes">votes: {comment.votes}</p>
+                            <div className="comment_interaction">
+                                <p className="comment_votes">votes: {comment.votes}</p>
+                                <DeleteButton comment={comment} setComments={setComments} username={username}/>
+                            </div>
                         </li>
                     )
                 })}</ul>
