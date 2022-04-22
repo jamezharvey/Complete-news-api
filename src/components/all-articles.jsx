@@ -1,33 +1,27 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import { Link } from "react-router-dom";
+import SortSelect from "./sort-select";
 import '../styling/article.styling.css'
 
 const AllArticles = () => {
     const [articles, setArticles] = useState([])
-    // const [sortType, setSortType] = useState('created_at');
+    const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
-        getArticles().then((articlesFromApi) => {
+        
+        getArticles(searchTerm).then((articlesFromApi) => {
+            console.log(searchTerm)
             setArticles(articlesFromApi)
         })
-
-        // const sortArray = type => {
-        //     const types = {
-        //         created_at: 'created_at',
-        //         votes: 'votes',
-        //     };
-        //     const sortProperty = types[type];
-        //     const sorted = [...articles].sort((a, b) => b[sortProperty] - a[sortProperty]);
-        //     setArticles(sorted);
-        // };
-        // sortArray(sortType);
-    }, []); 
+    }, [searchTerm]); 
+    console.log(searchTerm)
 
 
     return (
         <>
             <ul className="cards">
+                <SortSelect className="card_sort" setSearchTerm={setSearchTerm} />
                 {articles.map((article) => {
                     let strDate = `${article.created_at}`;
                     let date = strDate.substring(0, 10);
