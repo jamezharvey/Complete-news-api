@@ -14,7 +14,10 @@
         "Segoe UI Emoji",
         "Segoe UI Symbol";
 }
-
+.comment_header {
+    text-align: left;
+    margin-left: 30px;
+}
 .comments {
     display: flex;
     flex-wrap: wrap;
@@ -29,8 +32,31 @@ margin-right: auto;
 padding: 20px 30px 0px 30px;
 width: 700px;
 display: grid;
-grid-template-rows: 20px 40px 1fr 20px;
+grid-template-rows: 5px 18px 1fr 20px;
 transition: all 0.2s;
+}
+
+
+.comment_body {
+    border-left: 2px solid grey;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    grid-row: 3/4;
+    grid-column: 1;
+}
+
+.comment_author {
+    grid-row: 1/4;
+    grid-column: 1/4;
+    text-align: left;
+}
+
+.comment_date {
+    grid-row: 1/4;
+    grid-column: 1/4;
+    text-align: right;
 }
 
 .comment:after{
@@ -41,4 +67,33 @@ transition: all 0.2s;
     left: 0;
     height: 50%;
     width: 1px;
+}
+.comment_form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment_input {
+    width: 540px;
+    margin-left: 30px
+
+}
+
+.comment_submit {
+    flex-direction: row;
+    display: inline;
+    margin-left: 20px;
+}
+
+.comment_button {
+    width: 75px
+}
+
+.comment_votes {
+    padding-left: 10px;
 }

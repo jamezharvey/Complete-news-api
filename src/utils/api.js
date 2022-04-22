@@ -28,6 +28,14 @@ export const getComments = (article_id) => {
   });
 };
 
+export const postComments = (article_id, dataToPatch) => {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, dataToPatch)
+    .then(({ data }) => {
+      return data.comment;
+    });
+};
+
 export const patchVotes = (articleid, dataToPatch) => {
   return newsApi
     .patch(`/articles/${articleid}`, dataToPatch)

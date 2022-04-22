@@ -12,9 +12,12 @@ const VoteButton = ({articleid, votes}) => {
     setVoteCount(currVoteCount => currVoteCount + increment);
     setIsVoted(!isVoted);
     patchVotes(articleid, {inc_votes: increment})
+    .catch(() => {
+        setVoteCount(currVoteCount => currVoteCount - increment)
+    })
     }
 
-    if(votes === undefined || votes === null || votes === NaN || votes === false){
+    if(votes === undefined || votes === null || votes === false){
         return null
     }
 
