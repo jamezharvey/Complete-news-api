@@ -1,11 +1,12 @@
 import '../styling/header.styling.css'
 import { Link } from 'react-router-dom'
+import logo from "../assets/logo.png"
 
 const Header = () => {
     return (
         <>
             <header >
-                <Link to="/"><h1 className='header'>Not Real News Network</h1></Link>
+                <Link to="/"><img className='header' src={logo} alt="logo"/></Link>
             </header>
         </>
     )
