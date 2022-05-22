@@ -78,7 +78,6 @@ const Comments = ({articleid}) => {
                             <p className="comment_date">{date}</p>
                             <p className="comment_body">{comment.body}</p>
                             <div className="comment_interaction">
-                                <p className="comment_votes">votes: {comment.votes}</p>
                                 <DeleteButton comment={comment} setComments={setComments} username={username}/>
                             </div>
                         </li>
