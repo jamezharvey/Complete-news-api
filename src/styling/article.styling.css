@@ -143,14 +143,16 @@
   margin-right: 3px;
   border-style: none;
   background-color: orange;
+  border-radius: 5px;
 }
 
 .vote_count {
   border-style: solid rgb(41, 41, 41);
   border-width: 0.5px;
-  border-radius: 3px;
+  border-radius: 5px;
   text-align: center;
   background: #d8d9da;
+
 }
 
 a:link {
