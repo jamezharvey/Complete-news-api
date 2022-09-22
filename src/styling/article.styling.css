@@ -19,7 +19,7 @@
       margin-left: auto;
       margin-right: auto;
       padding-bottom: 0px;
-      width: 700px;
+      width: 60%;
       display: grid;
 }
 
@@ -37,7 +37,7 @@
   margin-right: auto;
   padding: 30px;
   padding-bottom: 0px;
-  width: 700px;
+  width: 60%;
   min-height: 200px;
   display: grid;
   grid-template-rows: 20px 50px 1fr 50px;
@@ -87,16 +87,17 @@
     text-align: left;
     margin-left: auto;
     margin-right: auto;
-    width: 700px;
+    width: 60%;
 }
 
 .article_box {
-    display: flex;
+    /*display: grid;
     flex-wrap: wrap;
     flex-direction:column;
     justify-content: space-between;
     text-align: left;
-    width: 700px;
+    */
+    width: 60%;
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -107,9 +108,15 @@
 
 .article_box2 {
   display: grid;
-  grid-template-columns: 350px 350px;
+  grid-template-columns: 50% 50%;
   padding: 5px 15px 15px 10px;
 }
+
+.article_title {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
 .article_author {
   text-align: left;
 }
@@ -119,10 +126,15 @@
   margin-right: 10px;
 }
 
+.article_body {
+  padding: 5px 15px 15px 10px;
+}
+
 .article_interactions {
   display: grid;
   margin-top: 10px;
-  grid-template-columns: 350px 350px;
+  grid-template-columns: 50% 50%;
+  padding: 5px 15px 15px 10px;
 }
 
 .article_votes{
